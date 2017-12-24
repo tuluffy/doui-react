@@ -1,0 +1,8 @@
+
+.idea/doui-react.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+node_modules/
+.gitignore
