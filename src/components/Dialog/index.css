@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.dialog-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-container {
+    width: 300px;
+    height: 150px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dialog-content {
+    height: 100px;
+    padding: 15px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.alert-handle {
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    color: #ee735c;
+    letter-spacing: 3px;
+
+    border-top: 1px solid #e7e7e7;
+}
+
+.dialog-title {
+    font-size: 18px;
+}
+
+.dialog-context {
+    font-size: 15px;
+    font-weight: 300;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+/*confirm*/
+.confirm-handleContainer {
+    height: 50px;
+
+    display: flex;
+    font-size: 18px;
+    color: #ee735c;
+    letter-spacing: 3px;
+
+    border-top: 1px solid #e7e7e7;
+}
+
+.confirm-handle {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-handle-right {
+    border-left: 1px solid #e7e7e7;
+}
+
+/*toast*/
+.toast-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast-container {
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    max-width: 80%;
+}
+
+.toast-context {
+    font-size: 15px;
+    color: #fff;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1; /*初始状态 透明度为1*/
+    }
+    10% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0; /*结尾状态 透明度为0*/
+    }
+}
+
+.toast-container {
+    -webkit-animation-name: fadeOut; /*动画名称*/
+    -webkit-animation-duration: 4s; /*动画持续时间*/
+    -webkit-animation-iteration-count: 1; /*动画次数*/
+    -webkit-animation-delay: 0s; /*延迟时间*/
+}

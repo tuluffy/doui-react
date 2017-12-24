@@ -1,32 +1,28 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import Alert from './components/AlertComp/index';
+import Dialog from './components/Dialog';
 
 class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            titleText: '提示',
-            context: '拦路雨偏似雪花，饮泣的你冻吗？'
+            titleText: '提示信息',
+            context: '拦路雨偏似雪花，饮泣的你冻吗？',
+            handleTheme: ['确认', '取消'],
         };
 
-        this.confirm = this.confirm.bind(this);
+        this.__$_handleFn = this.__$_handleFn.bind(this);
         this.$alert = this.$alert.bind(this);
     };
 
     $alert() {
-        let maskContainer = document.createElement('div');
-        maskContainer.id = 'maskContainer';
-        document.body.appendChild(maskContainer);
-
-        ReactDOM.render(<Alert titleText={this.state.titleText} context={this.state.context}
-                               cbFn={this.confirm}/>, maskContainer);
-
+        Dialog.Alert(this.state.titleText, this.state.context, this.state.handleTheme, this.__$_handleFn);
+        // Dialog.Confirm(this.state.titleText, this.state.context, this.state.handleTheme, [this.__$_handleFn, this.__$_handleFn]);
+        // Dialog.Toast('toast信息', 2000);
     };
 
-    confirm() {
-        alert('wahah');
+    __$_handleFn() {
+        alert('我是回调函数!');
     };
 
     render() {
